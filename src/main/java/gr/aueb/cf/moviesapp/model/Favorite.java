@@ -9,6 +9,10 @@ public class Favorite {
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private Long id;
     private String movieId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    private User user;
+
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
